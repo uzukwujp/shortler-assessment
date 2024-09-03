@@ -40,7 +40,7 @@ variable "subnetwork" {
   description = "Equals to the value of the name of the vpc or self link of the vpc the cluster is deployed"  
 }
 
-variable "jump_server_name" {
+variable "jump_server_ip" {
   type = string
   description = "The name of the jump server"  
 }

@@ -13,7 +13,7 @@ resource "google_container_cluster" "gke_cluster" {
 
   master_authorized_networks_config {
     cidr_blocks {
-      cidr_block = "${data.google_compute_instance.jump_server.network_interface.0.access_config.0.nat_ip}/32" 
+      cidr_block = "${var.jump_server_ip}/32" 
       display_name = "Jump_server"
     }
   }

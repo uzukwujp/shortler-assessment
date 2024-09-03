@@ -1,6 +1,6 @@
 
 terraform {
-  required_version = "1.5.7" 
+  required_version = "1.9.5" 
 
   required_providers {
     kubernetes = {

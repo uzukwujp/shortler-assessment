@@ -68,7 +68,7 @@ variable "repo_name" {
   description = "The name of the image registry"  
 }
 
-variable "jump_server_name" {
-  type = string
-  description = "The name of the jump server"  
+variable "jump_server_ip" {
+ type = string
+ description = "jump server external Ip"  
 }

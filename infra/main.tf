@@ -15,17 +15,6 @@ module "subnet" {
   depends_on     =  [ module.vpc ]  
 }
 
-module "jump-server" {
-  source           = "./modules/compute/jump-server"
-  network_id       = module.vpc.vpc_id
-  subnet_id        = module.subnet.subnet_ids[0]
-  zone             = var.zone
-  project_id       = var.project_id
-  jump_server_name = var.jump_server_name
-  region           = var.region
-  depends_on       = [ module.subnet ]
-}
-
 module "gke" {
   source                = "./modules/compute/GKE"
   zone                  = var.zone
@@ -35,9 +24,9 @@ module "gke" {
   nodepool_name         = var.nodepool_name
   service_account_name  = var.service_account_name 
   project_id            = var.project_id
-  jump_server_name      = var.jump_server_name
+  jump_server_ip        = var.jump_server_ip
   subnetwork            = module.subnet.subnet_ids[0] 
-  depends_on            = [module.vpc, module.subnet,module.jump-server] 
+  depends_on            = [module.vpc, module.subnet] 
 }
 
 module "container_registry" {
