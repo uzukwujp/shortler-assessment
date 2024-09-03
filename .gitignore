@@ -1,0 +1,4 @@
+
+simple-rest-api/node_modules
+infra/.terraform
+workloads/.terraform
