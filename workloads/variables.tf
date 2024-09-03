@@ -37,4 +37,9 @@ variable "location" {
   description = "location of the cluster"  
 }
 
+variable "project_id" {
+  type = string
+  description = "project id"  
+}
+
 

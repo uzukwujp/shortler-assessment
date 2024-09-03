@@ -63,10 +63,10 @@ jobs:
       run: gcloud auth configure-docker europe-west2-docker.pkg.dev
 
     - name: Build Docker image
-      run: cd simple-rest-api && docker build -t europe-west2-docker.pkg.dev/calm-brook-434215-s7/shortler-image-registry/shortler-app:v1 .
+      run: cd simple-rest-api && docker build -t europe-west2-docker.pkg.dev/calm-brook-434215-s7/shortler-image-registry/shortler-app:latest .
 
     - name: Push Docker image to Artifact Registry
-      run: docker push europe-west2-docker.pkg.dev/calm-brook-434215-s7/shortler-image-registry/shortler-app:v1
+      run: docker push europe-west2-docker.pkg.dev/calm-brook-434215-s7/shortler-image-registry/shortler-app:latest
 
   deploy-workloads:
     needs: build
