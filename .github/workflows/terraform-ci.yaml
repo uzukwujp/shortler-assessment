@@ -66,4 +66,26 @@ jobs:
       run: cd simple-rest-api && docker build -t europe-west2-docker.pkg.dev/calm-brook-434215-s7/shortler-image-registry/shortler-app:v1 .
 
     - name: Push Docker image to Artifact Registry
-      run: docker push europe-west2-docker.pkg.dev/calm-brook-434215-s7/shortler-image-registry/shortler-app:v1     
+      run: docker push europe-west2-docker.pkg.dev/calm-brook-434215-s7/shortler-image-registry/shortler-app:v1
+
+  deploy-workloads:
+    needs: build
+    runs-on: self-hosted
+    name: 'Deploy the Rest API on Kubernetes'
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v2'
+
+    - name: Terraform Init
+      run: cd workloads && terraform init
+
+    - name: Terraform Plan
+      run: cd workloads && terraform plan .
+
+    - name: Terraform Apply
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      run: cd workloads && terraform apply -auto-approve          
