@@ -95,7 +95,7 @@ resource "kubernetes_service" "app_service" {
       target_port = var.app_port
     }
 
-    type = "ClusterIP"
+    type = "NodePort"
   }
 }
 
