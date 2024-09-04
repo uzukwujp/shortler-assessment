@@ -57,6 +57,8 @@ The CI/CD pipeline is defined to automate the deployment process. It consists of
    - Build the Docker image using the provided `Dockerfile`.
    - Make sure you tag the image accordingly using the **image_registry_url**.
    - The **image_registry_url** will be returned to you as an output variable after a successful run of the terraform script in the **infra** folder.
+   - Before pushing the image to the registry make sure you run this command: `gcloud auth configure-docker europe-west2-docker.pkg.dev` to authenticate to the registry.
+   
    - Push the image to Google Artifact Registry.
 
 3. **Deploy the REST API**:
