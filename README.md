@@ -57,11 +57,13 @@ The CI/CD pipeline is defined to automate the deployment process. It consists of
 2. **Build and Push the Docker Image**:
    - Navigate to the `simple-rest-api/` directory.
    - Build the Docker image using the provided `Dockerfile`.
-   - Make sure you tag the image accordingly using the image_registry_url.
+   - Make sure you tag the image accordingly using the **image_registry_url**.
+   - The **image_registry_url** will be returned to you as an output variable after a successful run of the terraform script in the **infra** folder.
    - Push the image to Google Artifact Registry.
 
 3. **Deploy the REST API**:
    - Navigate to the `workloads/` directory.
+   - Navigate to the **terraform.auto.tfvars** file, update the **image** field accordingly.
    - Also configure your remote backend or disable it to use local backend
    - Apply the Terraform configurations to deploy the REST API on the GKE cluster.
 
