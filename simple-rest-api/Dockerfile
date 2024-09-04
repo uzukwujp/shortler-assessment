@@ -1,6 +1,6 @@
 
 
-FROM node:18 AS builder
+FROM node:16-alpine AS builder
 
 WORKDIR /app
 
@@ -12,7 +12,7 @@ COPY . .
 
 RUN npm run build
 
-FROM node:18
+FROM node:16-alpine
 
 WORKDIR /app
 
