@@ -6,7 +6,7 @@ import { currentTime } from "../controllers/current-time";
 const currentTimeRounter = Router()
 
 currentTimeRounter
-.get("/",
+.get("/current-time",
  currentTime
 )
 
