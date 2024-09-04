@@ -51,7 +51,7 @@ The CI/CD pipeline is defined to automate the deployment process. It consists of
 1. **Set up the Infrastructure**:
    - Navigate to the `Infra/` directory.
    - configure a new remote backend or disable it to use local backend
-   - navigate to the terraform.auto.tfvars file and set this field **jump_server_ip** to your PC's public IP address. This allows you to make api calls to the cluster as its a private cluster.
+   - navigate to the **terraform.auto.tfvars** file and set this field **jump_server_ip** to your PC's public IP address. This allows you to make api calls to the cluster as its a private cluster.
    - Then run the terraform script to create the VPC, subnets, GKE cluster, and image registry.
 
 2. **Build and Push the Docker Image**:
