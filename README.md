@@ -67,10 +67,6 @@ The CI/CD pipeline is defined to automate the deployment process. It consists of
    - Also configure your remote backend or disable it to use local backend
    - Apply the Terraform configurations to deploy the REST API on the GKE cluster.
 
-## Accessing the REST API
-
-Once deployed, the REST API can be accessed via the external IP address of the jump server. Ensure that the necessary network permissions are configured to allow traffic from the jump server to the GKE cluster.
-
 ## Conclusion
 
 This project demonstrates a complete workflow for developing, containerizing, and deploying a REST API in a private GKE cluster using Terraform. The CI/CD pipeline automates the entire process, from infrastructure provisioning to workload deployment.
