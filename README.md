@@ -66,6 +66,8 @@ The CI/CD pipeline is defined to automate the deployment process. It consists of
    - Navigate to the **terraform.auto.tfvars** file, update the **image** field accordingly.
    - Also configure your remote backend or disable it to use local backend
    - Apply the Terraform configurations to deploy the REST API on the GKE cluster.
+4. **Note**
+   - If you encounter issues around the version of terraform required to run the script in both **Infra/** and **workloads/** folders, navigate to the **version.tf** file in both folders to update the **required_version** field in the terraform block. 
 
 ## Conclusion
 
