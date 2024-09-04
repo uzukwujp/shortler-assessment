@@ -54,6 +54,7 @@ The CI/CD pipeline is defined to automate the deployment process. It consists of
 2. **Build and Push the Docker Image**:
    - Navigate to the `simple-rest-api/` directory.
    - Build the Docker image using the provided `Dockerfile`.
+   - Make sure you tag the image accordingly using the image_registry_url.
    - Push the image to Google Artifact Registry.
 
 3. **Deploy the REST API**:
