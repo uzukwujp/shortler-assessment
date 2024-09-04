@@ -36,11 +36,11 @@ jobs:
       run: cd infra && terraform init
 
     - name: Terraform Plan
-      run: cd infra && terraform plan     
+      run: cd infra && terraform plan -lock=false     
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: cd infra && terraform apply -auto-approve
+      run: cd infra && terraform apply -lock=false -auto-approve
 
   build:
     needs: terraform
@@ -84,9 +84,9 @@ jobs:
       run: cd workloads && terraform init
 
     - name: Terraform Plan
-      run: terraform -chdir=workloads plan
+      run: terraform -chdir=workloads -lock=false plan
 
 
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      run: terraform -chdir=workloads apply -auto-approve          
+      run: terraform -chdir=workloads apply -lock=false -auto-approve          
