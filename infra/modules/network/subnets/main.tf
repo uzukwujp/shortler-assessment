@@ -18,4 +18,7 @@ resource "google_compute_subnetwork" "subnet" {
     range_name    = var.subnets[count.index].service_range_name
     ip_cidr_range = var.subnets[count.index].service_cidr
   }
+  lifecycle {
+    ignore_changes = [secondary_ip_range]
+  }
 }
