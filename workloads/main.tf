@@ -61,17 +61,6 @@ resource "kubernetes_deployment" "app_deployment" {
           port {
             container_port = var.app_port
           }
-
-          resources {
-            limits = {
-              cpu    = "0.5"
-              memory = "512Mi"
-            }
-            requests = {
-              cpu    = "250m"
-              memory = "50Mi"
-            }
-          }
         }
       }
     }
