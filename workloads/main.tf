@@ -78,6 +78,7 @@ resource "kubernetes_deployment" "app_deployment" {
   }
 }
 
+
 resource "kubernetes_service" "app_service" {
   metadata {
     name      = "${var.app_name}-service"
