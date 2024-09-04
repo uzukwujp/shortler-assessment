@@ -85,6 +85,7 @@ jobs:
 
     - name: Terraform Plan
       run: terraform -chdir=workloads -lock=false plan
+      
 
 
     - name: Terraform Apply
