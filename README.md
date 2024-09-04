@@ -1,6 +1,4 @@
 
-# shortler-assessment
-
 # Project Documentation: REST API for Current Time
 
 ## Project Overview
